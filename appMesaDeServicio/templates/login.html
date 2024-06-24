@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% block header %}
+{% include "header.html" %}
+{% endblock %}
+{%block content %}
+<h3 class="text-center fw-bold mt-2">SISTEMA MESA DE SERVICIO CENTRO CTPI CAUCA</h3>
+<div class="iniciarSesion mt-3 w-50" style="margin: 0 auto">
+    <div class="card w-75" style="margin: 0 auto">
+        <div class="card-header fw-bold text-center text-white verdeSena">INGRESAR AL SISTEMA</div>
+        <div class="card-body">
+            <form action="/login/" method="post" class="w-100" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="user" class="fw-bold">Usuario:</label>
+                    <input type="text" name="user" id="usuario" class="form-control"
+                        placeholder="Su Correo Electrónico" required>
+                </div>
+                <div class="mb-3">
+                    <label for="user" class="fw-bold">Password:</label>
+                    <input type="password" name="password" id="password" class="form-control"
+                        placeholder="Su Contraseña" required>
+                </div>
+
+                <div>
+                    <button class="btn btn-success verdeSena">Ingresar</button>
+                    <button class="btn btn-secondary">Cancelar</button>
+                </div>
+
+                <br>
+            </form>
+        </div>
+        <div class="card-footer">Footer</div>
+    </div>
+
+
+</div>
+{% endblock %}
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}

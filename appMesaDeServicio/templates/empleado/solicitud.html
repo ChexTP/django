@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block header %}
+    {% include "header.html" %}
+{%endblock %}
+{% block menu %}
+    {% include "empleado/menu.html" %}
+{%endblock %}
+
+{% block content %}
+    <div class="text-center mt-3 fw-bold card mt-5 " style="margin:0 auto;width: 35rem;border-radius: 2rem;border-color: grey;">
+        <h2 class="p-3">Registro de Solicitud</h2>
+            <form action="/registroSolicitud/" method="post" class="p-4">
+                {% csrf_token%}
+                <div class="mb-3">
+                    <label for="descripcion" class="fw-bold">Descripcion:</label>
+                    <textarea name="descripcion" id="" rows="5" cols="10" class="form-control" placeholder="Haga una descripcion de lo que le pasa al equipo" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="id_ambiente">Oficina / Ambiente:</label>
+                    <select name="id_ambiente" id="" class="form-select" required>
+                        <option value="">Selecione</option>
+                        {%for ambiente in oficinasAmbientes%}            
+                            <option value="{{ambiente.id}}">{{ambiente.ofiNombre}}</option>
+                        {%endfor%}
+                    </select>    
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-outline-info">Registar</button>
+                    <button type="reset" class="btn btn-outline-danger">Cancelar</button>
+                </div>
+            </form>
+
+            <div>
+                {{message}}
+            </div>
+
+    </div>
+{% endblock content %}

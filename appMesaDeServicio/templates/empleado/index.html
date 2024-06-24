@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% block header %}
+    {% include "header.html" %}
+{%endblock %}
+{% block menu %}
+    {% include "empleado/menu.html" %}
+{%endblock %}
+{% block content %}
+<h3 class="text-center mt-3 fw-bold">MÓDULO EMPLEADO</h3>
+<br />
+<div class="row" style="margin: 0 auto !important; width: 55%">  
+  <div class="col-sm">
+    <a href="#">
+      <div class="text-center icon" style="font-size: 8rem;">
+        <i class="fa fa-eye fa-fade"></i>
+      </div>
+    </a>
+    <div class="text-center fw-bold">Ver Solicitudes</div>
+  </div>
+ 
+  
+</div>
+{%endblock %}
+{% block footer %}
+    {% include "footer.html" %}
+{%endblock %}
